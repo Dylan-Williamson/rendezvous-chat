@@ -19,7 +19,7 @@ const ChatHeader = () => {
                 <EditLocationRounded />
                 <PeopleAltRounded />
                 <div className="chatHeader__search">
-                    <input placeHolder="Search" />
+                    <input placeholder="Search" />
                     <SearchRounded />
                 </div>
                 <SendRounded />
