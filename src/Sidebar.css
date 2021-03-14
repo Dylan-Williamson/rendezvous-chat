@@ -60,3 +60,35 @@
   font-size: 30px;
   padding: 8px;
 }
+
+.sidebar__voice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  background-color: #2f3135;
+  padding: 10px;
+  border-top: 1px solid gray;
+}
+
+.sidebar__voiceInfo {
+  flex: 1;
+  padding: 10px;
+}
+
+.sidebar__voiceIcon {
+  color: rgb(22, 136, 22);
+}
+
+.sidebar__voiceInfo h3 {
+  color: rgb(22, 136, 22);
+}
+
+.sidebar__voiceInfo p {
+  font-size: smaller;
+}
+
+.sidebar__voiceIcons .MuiSvgIcon-root {
+    padding: 10px;
+}
+  
