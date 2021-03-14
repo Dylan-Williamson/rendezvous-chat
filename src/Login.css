@@ -1,0 +1,33 @@
+.login {
+    display: grid;
+    background: black;
+    place-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.login button {
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(219, 7, 7);
+    color: black;
+    font-size: large;
+    font-weight: bolder;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: oblique;
+    transition: all 0.6s ease-in-out;
+}
+
+.login button:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgb(224, 3, 3), 0px 0px 30px rgb(202, 2, 102);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.login div img {
+    object-fit: contain;
+    height: 300px;
+}
