@@ -17,7 +17,7 @@ const Chat = () => {
                 <AddCircle fontSize="large" />
                 <form>
                     <input placeholder={`MESSAGE #TESTCHANNEL`} />
-                    <button type="submit" classNam="chat__inputButton">
+                    <button type="submit" className="chat__inputButton">
                         Send Message
                     </button>
                 </form>
