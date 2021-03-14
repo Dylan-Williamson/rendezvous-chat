@@ -52,7 +52,7 @@ const Sidebar = () => {
                 </div>
             </div>
             <div className="sidebar__profile">
-                <Avatar />
+                <Avatar src="https://avatars.githubusercontent.com/u/61719449?s=400&u=9faf415d3044cb2ce1b12a7c8fc2b1d25acf290b&v=4" />
                 <div className="sidebar__profileInfo">
                     <h3>@agxra</h3>
                     <p>My ID</p>
