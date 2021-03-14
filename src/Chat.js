@@ -2,13 +2,16 @@ import { AddCircle, CardGiftcard, EmojiEmotions, Gif } from '@material-ui/icons'
 import React from 'react';
 import './Chat.css';
 import ChatHeader from './ChatHeader';
+import Message from './Message'
 
 const Chat = () => {
     return (
         <div className="chat">
             <ChatHeader />
             <div className="chat__messages">
-
+                <Message />
+                <Message />
+                <Message />
             </div>
             <div className="chat__input">
                 <AddCircle fontSize="large" />
