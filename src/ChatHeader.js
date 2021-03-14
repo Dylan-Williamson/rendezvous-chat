@@ -5,7 +5,6 @@ import { Notifications, EditLocationRounded, PeopleAltRounded, HelpRounded, Sear
 const ChatHeader = () => {
     return (
         <div className="chatHeader">
-            <h3>header</h3>
             <div className="chatHeader__left">
                 <h3>
                     <span className="chatHeader__hash">

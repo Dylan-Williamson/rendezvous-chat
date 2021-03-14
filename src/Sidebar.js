@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Sidebar.css';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
@@ -12,10 +12,29 @@ import MicIcon from '@material-ui/icons/Mic';
 import HeadsetIcon from '@material-ui/icons/Headset';
 import SettingsIcon from '@material-ui/icons/Settings';
 import { selectUser } from './features/userSlice';
-import { auth } from './firebase';
+import db, { auth } from './firebase';
 
 const Sidebar = () => {
     const user = useSelector(selectUser);
+    const [channels, setChannels] = useState([]);
+
+    useEffect(() => {
+        db.collection("channels").onSnapshot(snapshot => (
+            setChannels(snapshot.docs.map(doc => ({
+                    id: doc.id,
+                    channel: doc.data(),
+            })))
+        ))
+    }, []);
+
+    const handleAddChannel = () => {
+        const channelName = prompt("Enter a new channel name");
+        if (channelName) {
+            db.collection('channels').add({
+                channelName
+            });
+        };
+    }
 
     return (
         <div className="sidebar">
@@ -30,14 +49,16 @@ const Sidebar = () => {
                         <ExpandMoreIcon />
                         <h4>Text Channels</h4>
                     </div>
-                    <AddIcon className="sidebar__addChannel" />
+                    <AddIcon className="sidebar__addChannel" onClick={handleAddChannel} />
                 </div>
                 <div className="sidebar__channelsList">
-                    <SidebarChannel />
-                    <SidebarChannel />
-                    <SidebarChannel />
-                    <SidebarChannel />
-                    <SidebarChannel />
+                    {channels.map(({id, channel}) => (
+                        <SidebarChannel
+                            key={id}
+                            id={id}
+                            channelName={channel.channelName}
+                        />
+                    ))}
                 </div>
             </div>
 
