@@ -2,18 +2,18 @@ import { Avatar } from '@material-ui/core';
 import React from 'react';
 import './Message.css';
 
-const Message = () => {
+const Message = ({ timestamp, user, message}) => {
     return (
         <div className="message">
-            <Avatar />
+            <Avatar src={user.photo}/>
             <div className="message__info">
                 <h4>
-                    @agxra
+                    {user.displayName}
                     <span className="message__timestamp">
-                        timestamp
+                        {new Date(timestamp?.toDate()).toUTCString()}
                     </span>
                 </h4>
-                A Message
+                {message}
             </div>
         </div>
     )
